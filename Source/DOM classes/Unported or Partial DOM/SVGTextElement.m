@@ -51,6 +51,8 @@
 	 */
 	NSString* actualSize = [self cascadedValueForStylableProperty:@"font-size"];
 	NSString* actualFamily = [self cascadedValueForStylableProperty:@"font-family"];
+    NSString* actualTextAnchor = [self cascadedValueForStylableProperty:@"text-anchor"];
+    NSString* actualFill = [self cascadedValueForStylableProperty:@"fill"];
 	
 	CGFloat effectiveFontSize = (actualSize.length > 0) ? [actualSize floatValue] : 12; // I chose 12. I couldn't find an official "default" value in the SVG spec.
 	/** Convert the size down using the SVG transform at this point, before we calc the frame size etc */
@@ -125,17 +127,29 @@
 	 
 	 If/when Apple fixes their bugs - or if you know enough about their API's to workaround the bugs, feel free to fix this code.
 	 */
-	CGFloat offsetToConvertSVGOriginToAppleOrigin = - suggestedUntransformedSize.height;
+    CGFloat offsetToConvertSVGOriginToAppleOrigin = 0;
+    CGFloat widthOffsetToConvertSVGOriginToAppleOrigin = 0;
+    
+    //adjusting postion offset based on text-anchor attribute
+    if ([actualTextAnchor  isEqual: @"middle"]) {
+        offsetToConvertSVGOriginToAppleOrigin = - lroundf(suggestedUntransformedSize.height/2);
+        widthOffsetToConvertSVGOriginToAppleOrigin = - lroundf(suggestedUntransformedSize.width/2);
+    }else{
+        offsetToConvertSVGOriginToAppleOrigin = - lroundf(suggestedUntransformedSize.height);
+    }
+
 	CGSize fakeSizeToApplyNonTranslatingPartsOfTransform = CGSizeMake( 0, offsetToConvertSVGOriginToAppleOrigin);
+    CGSize fakeWidthSizeToApplyNonTranslatingPartsOfTransform = CGSizeMake(widthOffsetToConvertSVGOriginToAppleOrigin, 0);
 	
-	label.position = CGPointMake( 0,
+	label.position = CGPointMake( 0 + CGSizeApplyAffineTransform( fakeWidthSizeToApplyNonTranslatingPartsOfTransform, textTransformAbsoluteWithLocalPositionOffset).width,
 								 0 + CGSizeApplyAffineTransform( fakeSizeToApplyNonTranslatingPartsOfTransform, textTransformAbsoluteWithLocalPositionOffset).height);
-	label.anchorPoint = CGPointZero; // WARNING: SVG applies transforms around the top-left as origin, whereas Apple defaults to center as origin, so we tell Apple to work "like SVG" here.
+    
+    label.anchorPoint = CGPointZero; // WARNING: SVG applies transforms around the top-left as origin, whereas Apple defaults to center as origin, so we tell Apple to work "like SVG" here.
 	label.affineTransform = textTransformAbsoluteWithLocalPositionOffset;
 	label.fontSize = effectiveFontSize;
     label.string = effectiveText;
     label.alignmentMode = kCAAlignmentLeft;
-    label.foregroundColor = [UIColor blackColor].CGColor;
+    label.foregroundColor = [self colorFromHexString:actualFill].CGColor;
 
 	/** VERY USEFUL when trying to debug text issues:
 	label.backgroundColor = [UIColor colorWithRed:0.5 green:0 blue:0 alpha:0.5].CGColor;
@@ -144,6 +158,14 @@
 	*/
 	
     return label;
+}
+
+- (UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 - (void)layoutLayer:(CALayer *)layer

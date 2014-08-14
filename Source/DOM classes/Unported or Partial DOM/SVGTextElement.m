@@ -20,6 +20,7 @@
 
 - (CALayer *) newLayer
 {
+    
 	/**
 	 BY DESIGN: we work out the positions of all text in ABSOLUTE space, and then construct the Apple CALayers and CATextLayers around
 	 them, as required.
@@ -64,7 +65,7 @@
 	if( actualFamily != nil)
 		font = CTFontCreateWithName( (CFStringRef)actualFamily, effectiveFontSize, NULL);
 	if( font == NULL )
-		font = CTFontCreateWithName( (CFStringRef) @"Verdana", effectiveFontSize, NULL); // Spec says to use "whatever default font-family is normal for your system". On iOS, that's Verdana
+		font = CTFontCreateWithName( (CFStringRef) @"Arial-BoldMT", effectiveFontSize, NULL); // Spec says to use "whatever default font-family is normal for your system". On iOS, that's Verdana
 	
 	/** Convert all whitespace to spaces, and trim leading/trailing (SVG doesn't support leading/trailing whitespace, and doesnt support CR LF etc) */
 	
@@ -141,15 +142,18 @@
 	CGSize fakeSizeToApplyNonTranslatingPartsOfTransform = CGSizeMake( 0, offsetToConvertSVGOriginToAppleOrigin);
     CGSize fakeWidthSizeToApplyNonTranslatingPartsOfTransform = CGSizeMake(widthOffsetToConvertSVGOriginToAppleOrigin, 0);
 	
-	label.position = CGPointMake( 0 + CGSizeApplyAffineTransform( fakeWidthSizeToApplyNonTranslatingPartsOfTransform, textTransformAbsoluteWithLocalPositionOffset).width,
-								 0 + CGSizeApplyAffineTransform( fakeSizeToApplyNonTranslatingPartsOfTransform, textTransformAbsoluteWithLocalPositionOffset).height);
+	label.position = CGPointMake(0 + CGSizeApplyAffineTransform( fakeWidthSizeToApplyNonTranslatingPartsOfTransform, textTransformAbsoluteWithLocalPositionOffset).width,
+                                 0 + CGSizeApplyAffineTransform( fakeSizeToApplyNonTranslatingPartsOfTransform, textTransformAbsoluteWithLocalPositionOffset).height);
     
     label.anchorPoint = CGPointZero; // WARNING: SVG applies transforms around the top-left as origin, whereas Apple defaults to center as origin, so we tell Apple to work "like SVG" here.
+    
 	label.affineTransform = textTransformAbsoluteWithLocalPositionOffset;
 	label.fontSize = effectiveFontSize;
     label.string = effectiveText;
     label.alignmentMode = kCAAlignmentLeft;
     label.foregroundColor = [self colorFromHexString:actualFill].CGColor;
+    label.contentsScale = [[UIScreen mainScreen] scale];
+    
 
 	/** VERY USEFUL when trying to debug text issues:
 	label.backgroundColor = [UIColor colorWithRed:0.5 green:0 blue:0 alpha:0.5].CGColor;

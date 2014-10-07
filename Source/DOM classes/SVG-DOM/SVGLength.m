@@ -145,6 +145,14 @@ static float cachedDevicePixelsPerInch;
 	|| [platform hasPrefix:@"iPhone5"]
 	|| [platform hasPrefix:@"iPhone6"])
 		return 326.0f;
+    
+    if ( [platform hasPrefix:@"iPhone7,2"]) {
+        return 326.0f;
+    }
+    
+    if ( [platform hasPrefix:@"iPhone7,1"]) {
+        return 401.0f;
+    }
 	
 	if( [platform hasPrefix:@"iPhone"]) // catch-all for higher-end devices not yet existing
 	{

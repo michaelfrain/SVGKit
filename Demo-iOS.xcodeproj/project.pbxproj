@@ -67,6 +67,7 @@
 		66E862A21688BA510059C9C4 /* voies.svg in Resources */ = {isa = PBXBuildFile; fileRef = 66E8628D1688BA510059C9C4 /* voies.svg */; };
 		66F33DCD182FDE50004464AC /* map-alaska-onlysimple.svg in Resources */ = {isa = PBXBuildFile; fileRef = 66F33DCC182FDE50004464AC /* map-alaska-onlysimple.svg */; };
 		9ED79A21179D83580048AA5B /* radialGradientTest.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9ED79A20179D83580048AA5B /* radialGradientTest.svg */; };
+		D3D36F821AF142970044762E /* PlayCard.svg in Resources */ = {isa = PBXBuildFile; fileRef = D3D36F811AF142970044762E /* PlayCard.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		66E8628D1688BA510059C9C4 /* voies.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = voies.svg; sourceTree = "<group>"; };
 		66F33DCC182FDE50004464AC /* map-alaska-onlysimple.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "map-alaska-onlysimple.svg"; sourceTree = "<group>"; };
 		9ED79A20179D83580048AA5B /* radialGradientTest.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = radialGradientTest.svg; sourceTree = "<group>"; };
+		D3D36F811AF142970044762E /* PlayCard.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlayCard.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 				66E8627E1688BA510059C9C4 /* breaking-1.svg */,
 				9ED79A20179D83580048AA5B /* radialGradientTest.svg */,
 				66E8627F1688BA510059C9C4 /* CurvedDiamond.svg */,
+				D3D36F811AF142970044762E /* PlayCard.svg */,
 				66E862801688BA510059C9C4 /* Europe_states_reduced.svg */,
 				66E862811688BA510059C9C4 /* imageWithASinglePointPath.svg */,
 				66E862821688BA510059C9C4 /* Lion.svg */,
@@ -394,6 +397,7 @@
 				66E862701688BA0B0059C9C4 /* iPadDetailViewController.xib in Resources */,
 				66E862711688BA0B0059C9C4 /* iPhoneDetailViewController.xib in Resources */,
 				66E862721688BA0B0059C9C4 /* MasterViewController_iPad.xib in Resources */,
+				D3D36F821AF142970044762E /* PlayCard.svg in Resources */,
 				66E862731688BA0B0059C9C4 /* MasterViewController_iPhone.xib in Resources */,
 				66E8628E1688BA510059C9C4 /* Monkey.png in Resources */,
 				66F33DCD182FDE50004464AC /* map-alaska-onlysimple.svg in Resources */,

@@ -10,6 +10,4 @@
 
 @interface SVGTspanElement : SVGTextElement<ConverterSVGToCALayer, SVGTransformable>
 
-+ (CALayer *)transformSpanElements:(CALayer *)rawLayer fromParentNode:(SVGTextElement *)parentNode;
-
 @end

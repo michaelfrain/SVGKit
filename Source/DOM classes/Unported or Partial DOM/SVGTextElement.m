@@ -1,4 +1,5 @@
 #import "SVGTextElement.h"
+#import "SVGTspanElement.h"
 
 #import <CoreText/CoreText.h>
 
@@ -35,7 +36,10 @@
 	 
 	 NB: the local bits (x/y offset) have to be pre-transformed by
 	 */
-	CGAffineTransform textTransformAbsoluteWithLocalPositionOffset = CGAffineTransformConcat( CGAffineTransformMakeTranslation( [self.x pixelsValue], [self.y pixelsValue]), textTransformAbsolute);
+    float xPosition = [self.x pixelsValue];
+    float yPosition = [self.y pixelsValue];
+    
+	CGAffineTransform textTransformAbsoluteWithLocalPositionOffset = CGAffineTransformConcat( CGAffineTransformMakeTranslation( xPosition, yPosition), textTransformAbsolute);
 	
 	/**
 	 Apple's CATextLayer is poor - one of those classes Apple hasn't finished writing?
@@ -68,11 +72,17 @@
 		font = CTFontCreateWithName( (CFStringRef) @"Arial-BoldMT", effectiveFontSize, NULL); // Spec says to use "whatever default font-family is normal for your system". On iOS, that's Verdana
 	
 	/** Convert all whitespace to spaces, and trim leading/trailing (SVG doesn't support leading/trailing whitespace, and doesnt support CR LF etc) */
+    NSString* effectiveText = self.textContent.mutableCopy; // FIXME: this is a TEMPORARY HACK, UNTIL PROPER PARSING OF <TSPAN> ELEMENTS IS ADDED
+    for (id childNode in self.childNodes.internalArray) {
+        if ([childNode isKindOfClass:[SVGTspanElement class]]) {
+            SVGTspanElement *compareNode = (SVGTspanElement *)childNode;
+            effectiveText = [effectiveText stringByReplacingOccurrencesOfString:compareNode.textContent withString:[NSString stringWithFormat:@"%@\n", compareNode.textContent]];
+        }
+    }
 	
-	NSString* effectiveText = self.textContent; // FIXME: this is a TEMPORARY HACK, UNTIL PROPER PARSING OF <TSPAN> ELEMENTS IS ADDED
 	
-	effectiveText = [effectiveText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	effectiveText = [effectiveText stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+//	effectiveText = [effectiveText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//	effectiveText = [effectiveText stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
 	
 	/** Calculate 
 	 

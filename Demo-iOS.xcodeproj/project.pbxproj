@@ -68,6 +68,8 @@
 		66F33DCD182FDE50004464AC /* map-alaska-onlysimple.svg in Resources */ = {isa = PBXBuildFile; fileRef = 66F33DCC182FDE50004464AC /* map-alaska-onlysimple.svg */; };
 		74AFD0F21936363200618DE8 /* football-play.svg in Resources */ = {isa = PBXBuildFile; fileRef = 74AFD0F11936363200618DE8 /* football-play.svg */; };
 		9ED79A21179D83580048AA5B /* radialGradientTest.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9ED79A20179D83580048AA5B /* radialGradientTest.svg */; };
+		D38B89231B030281006C3F3F /* BP_Starters.svg in Resources */ = {isa = PBXBuildFile; fileRef = D38B89221B030281006C3F3F /* BP_Starters.svg */; };
+		D3D36F821AF142970044762E /* PlayCard.svg in Resources */ = {isa = PBXBuildFile; fileRef = D3D36F811AF142970044762E /* PlayCard.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,8 @@
 		66F33DCC182FDE50004464AC /* map-alaska-onlysimple.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "map-alaska-onlysimple.svg"; sourceTree = "<group>"; };
 		74AFD0F11936363200618DE8 /* football-play.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "football-play.svg"; sourceTree = "<group>"; };
 		9ED79A20179D83580048AA5B /* radialGradientTest.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = radialGradientTest.svg; sourceTree = "<group>"; };
+		D38B89221B030281006C3F3F /* BP_Starters.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BP_Starters.svg; sourceTree = "<group>"; };
+		D3D36F811AF142970044762E /* PlayCard.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlayCard.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +297,7 @@
 				66A09C9F16CFE67B003CD5CD /* svg spec examples */,
 				663FD00316CAB16B00CCBFB3 /* groups-and-layers-test.svg */,
 				665E07F216CE81DD00D6934D /* g-element-applies-rotation.svg */,
+				D38B89221B030281006C3F3F /* BP_Starters.svg */,
 				66324BE116D24FA4001C1E83 /* rounded-rects.svg */,
 				661ADBF916CC3399006F4BC3 /* rotated-and-skewed-text.svg */,
 				66E8627C1688BA510059C9C4 /* australia_states_blank.svg */,
@@ -301,6 +306,7 @@
 				66E8627E1688BA510059C9C4 /* breaking-1.svg */,
 				9ED79A20179D83580048AA5B /* radialGradientTest.svg */,
 				66E8627F1688BA510059C9C4 /* CurvedDiamond.svg */,
+				D3D36F811AF142970044762E /* PlayCard.svg */,
 				66E862801688BA510059C9C4 /* Europe_states_reduced.svg */,
 				66E862811688BA510059C9C4 /* imageWithASinglePointPath.svg */,
 				66E862821688BA510059C9C4 /* Lion.svg */,
@@ -393,11 +399,13 @@
 			files = (
 				66E8626C1688BA0B0059C9C4 /* Default-568h@2x.png in Resources */,
 				66E8626F1688BA0B0059C9C4 /* InfoPlist.strings in Resources */,
+				D38B89231B030281006C3F3F /* BP_Starters.svg in Resources */,
 				667CA182181D598F00E49B68 /* cubic01.svg in Resources */,
 				66E862701688BA0B0059C9C4 /* iPadDetailViewController.xib in Resources */,
 				66E862711688BA0B0059C9C4 /* iPhoneDetailViewController.xib in Resources */,
 				74AFD0F21936363200618DE8 /* football-play.svg in Resources */,
 				66E862721688BA0B0059C9C4 /* MasterViewController_iPad.xib in Resources */,
+				D3D36F821AF142970044762E /* PlayCard.svg in Resources */,
 				66E862731688BA0B0059C9C4 /* MasterViewController_iPhone.xib in Resources */,
 				66E8628E1688BA510059C9C4 /* Monkey.png in Resources */,
 				66F33DCD182FDE50004464AC /* map-alaska-onlysimple.svg in Resources */,

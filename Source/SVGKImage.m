@@ -6,6 +6,8 @@
 #import "SVGTitleElement.h"
 #import "SVGPathElement.h"
 #import "SVGUseElement.h"
+#import "SVGTextElement.h"
+#import "SVGTspanElement.h"
 
 #import "SVGSVGElement_Mutable.h" // so that changing .size can change the SVG's .viewport
 
@@ -627,6 +629,9 @@ static NSMutableDictionary* globalSVGKImageCache;
 		SVGUseElement* useElement = (SVGUseElement*) element;
 		childNodes = useElement.instanceRoot.correspondingElement.childNodes;
 	}
+    if ([element isKindOfClass:[SVGTspanElement class]] || [element isKindOfClass:[Text class]] ) {
+        return nil;
+    }
 	
 	if ( childNodes.length < 1 ) {
 		return layer;

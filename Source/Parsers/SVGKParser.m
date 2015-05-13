@@ -20,6 +20,8 @@
 #import "SVGKParserDefsAndUse.h"
 @class SVGKParserDOM;
 #import "SVGKParserDOM.h"
+@class SVGKParserText;
+#import "SVGParserText.h"
 
 #import "SVGDocument_Mutable.h" // so we can modify the SVGDocuments we're parsing
 
@@ -133,6 +135,7 @@ SVGKParser* getCurrentlyParsingParser()
 	SVGKParserStyles* subParserStyles = [[[SVGKParserStyles alloc] init] autorelease];
 	SVGKParserDefsAndUse *subParserDefsAndUse = [[[SVGKParserDefsAndUse alloc] init] autorelease];
 	SVGKParserDOM *subParserXMLDOM = [[[SVGKParserDOM alloc] init] autorelease];
+    SVGParserText *subParserText = [[[SVGParserText alloc] init] autorelease];
 	
 	[self addParserExtension:subParserSVG];
 	[self addParserExtension:subParserGradients];
@@ -140,6 +143,7 @@ SVGKParser* getCurrentlyParsingParser()
 	[self addParserExtension:subParserStyles];
 	[self addParserExtension:subParserDefsAndUse];
 	[self addParserExtension:subParserXMLDOM];
+    [self addParserExtension:subParserText];
 }
 
 - (void) addParserExtension:(NSObject<SVGKParserExtension>*) extension

@@ -7,7 +7,23 @@
 //
 
 #import "SVGTspanElement.h"
+#import "SVGTextPositioningElement_Mutable.h"
 
 @implementation SVGTspanElement
+
+@synthesize transform;
+
+- (CALayer *)newLayer {
+    CALayer *layer = [super newLayer];
+    return layer;
+}
+
+- (void)layoutLayer:(CALayer *)layer {
+    
+}
+
++ (CALayer *)transformSpanElements:(CALayer *)rawLayer fromParentNode:(SVGTextElement *)parentNode {
+    
+}
 
 @end

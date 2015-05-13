@@ -8,6 +8,8 @@
 
 #import "SVGTextElement.h"
 
-@interface SVGTspanElement : SVGTextElement
+@interface SVGTspanElement : SVGTextElement<ConverterSVGToCALayer, SVGTransformable>
+
++ (CALayer *)transformSpanElements:(CALayer *)rawLayer fromParentNode:(SVGTextElement *)parentNode;
 
 @end

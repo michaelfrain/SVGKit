@@ -3,6 +3,7 @@
 #import "SVGTextPositioningElement.h"
 #import "ConverterSVGToCALayer.h"
 #import "SVGTransformable.h"
+#import "NodeList+Mutable.h"
 
 /**
  http://www.w3.org/TR/2011/REC-SVG11-20110816/text.html#TextElement

@@ -41,8 +41,8 @@ static NSDictionary *elementMap;
                           [SVGPolylineElement class], @"polyline",
                           [SVGRectElement class], @"rect",
                           [SVGTitleElement class], @"title",
-						   [SVGTextElement class], @"text",
-                           [SVGTspanElement class], @"tspan",
+//						   [SVGTextElement class], @"text",
+//                           [SVGTspanElement class], @"tspan",
 						   nil] retain];
 		}
 	}

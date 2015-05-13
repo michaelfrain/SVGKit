@@ -237,6 +237,8 @@
 		9ED79A25179D87790048AA5B /* SVGGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED79A23179D87790048AA5B /* SVGGradientLayer.m */; };
 		D3D36F861AF147530044762E /* SVGTspanElement.h in Headers */ = {isa = PBXBuildFile; fileRef = D3D36F841AF147530044762E /* SVGTspanElement.h */; };
 		D3D36F871AF147530044762E /* SVGTspanElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D3D36F851AF147530044762E /* SVGTspanElement.m */; };
+		D3EAE3F11AF92AE80037411B /* SVGParserText.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAE3EF1AF92AE80037411B /* SVGParserText.h */; };
+		D3EAE3F21AF92AE80037411B /* SVGParserText.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EAE3F01AF92AE80037411B /* SVGParserText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -488,6 +490,8 @@
 		9ED79A23179D87790048AA5B /* SVGGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGGradientLayer.m; sourceTree = "<group>"; };
 		D3D36F841AF147530044762E /* SVGTspanElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGTspanElement.h; sourceTree = "<group>"; };
 		D3D36F851AF147530044762E /* SVGTspanElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGTspanElement.m; sourceTree = "<group>"; };
+		D3EAE3EF1AF92AE80037411B /* SVGParserText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGParserText.h; sourceTree = "<group>"; };
+		D3EAE3F01AF92AE80037411B /* SVGParserText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGParserText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -850,6 +854,8 @@
 				66EEE8561688CA94002E2658 /* SVGKParserStyles.m */,
 				66E8637A1688C2770059C9C4 /* SVGKParserSVG.h */,
 				66E8637B1688C2770059C9C4 /* SVGKParserSVG.m */,
+				D3EAE3EF1AF92AE80037411B /* SVGParserText.h */,
+				D3EAE3F01AF92AE80037411B /* SVGParserText.m */,
 			);
 			path = "Parser Extensions";
 			sourceTree = "<group>";
@@ -914,6 +920,7 @@
 				66E863A11688C2780059C9C4 /* Attr.h in Headers */,
 				66E863A31688C2780059C9C4 /* CDATASection.h in Headers */,
 				66E863A51688C2780059C9C4 /* CharacterData.h in Headers */,
+				D3EAE3F11AF92AE80037411B /* SVGParserText.h in Headers */,
 				66E863A71688C2780059C9C4 /* Comment.h in Headers */,
 				66E863A91688C2780059C9C4 /* Document+Mutable.h in Headers */,
 				66E863AA1688C2780059C9C4 /* Document.h in Headers */,
@@ -1125,6 +1132,7 @@
 				66E863C51688C2780059C9C4 /* SVGDefsElement.m in Sources */,
 				66E863C71688C2780059C9C4 /* SVGDocument.m in Sources */,
 				D3D36F871AF147530044762E /* SVGTspanElement.m in Sources */,
+				D3EAE3F21AF92AE80037411B /* SVGParserText.m in Sources */,
 				66E863CA1688C2780059C9C4 /* SVGElementInstance.m in Sources */,
 				66E863CD1688C2780059C9C4 /* SVGElementInstanceList.m in Sources */,
 				668418C518674BF900C61EC2 /* SVGKExporterUIImage.m in Sources */,
